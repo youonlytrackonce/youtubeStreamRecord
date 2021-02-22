@@ -1,0 +1,3 @@
+SHELL=/bin/bash
+BASH_ENV=~/.bashrc_conda
+0 * * * * conda activate deeppbm; python /home/ubuntu/phd/youtubeStreamRecord/ytRecord.py >> /home/ubuntu/phd/youtubeStreamRecord/ytRecord.log 2>&1; conda deactivate 
