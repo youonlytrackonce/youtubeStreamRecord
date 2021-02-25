@@ -14,7 +14,7 @@ outDir = '/home/ubuntu/phd/youtubeStreamRecord/cams/'
 camTxt = open('/home/ubuntu/phd/youtubeStreamRecord/youtubeStrCam_v3.txt', 'r')
 
 lines = camTxt.readlines()
-frmNum = 600
+frmNum = 1800
 for count, line in enumerate(lines):
     commState = line.split(' ')[0]
     if commState != '#':
@@ -25,9 +25,13 @@ for count, line in enumerate(lines):
         fps = line.split(' ')[7]
         print('CamID: {}, URL: {}, x1,y1,x2,y2: {},{},{},{}, res: {}, fps: {}'.format(camID, camURL, x1, y1, x2, y2,
                                                                                       resolution, fps))
-        video = pafy.new(camURL)
-        best = video.getbest(preftype="mp4")
-        capture = cv2.VideoCapture(best.url)
+        try:
+            video = pafy.new(camURL)
+            best = video.getbest(preftype="mp4")
+            capture = cv2.VideoCapture(best.url)
+        except Exception as ex:
+            print(ex)
+            continue
 
         capTime = datetime.now().strftime('%Y-%m-%d,%H:%M:%S')
         if not os.path.exists(outDir + 'cam{}'.format(camID)):
@@ -50,7 +54,7 @@ for count, line in enumerate(lines):
                 timeoutFlag = 1
                 break
         if timeoutFlag == 1:
-            print('cam{} timeout!!!'.format(camID))
+            print('cam{} timeout!!! {}'.format(camID, capTime))
             capture.release
             continue
         else:
