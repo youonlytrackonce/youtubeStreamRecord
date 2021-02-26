@@ -10,7 +10,7 @@
 9 https://www.youtube.com/watch?v=G05wmWFDtSo 164 110 1784 1026 1920x1080 30
 10 https://www.youtube.com/watch?v=Zv1fgmd1pr4 0 0 1920 1080 1920x1080 30
 11 https://www.youtube.com/watch?v=pFBsLTllFJo 56 89 1790 1065 1920x1080 30
-12 https://www.youtube.com/watch?v=1qtnmA17fOI 0 0 1920 1080 1920x1080 30
+12 https://www.youtube.com/watch?v=1qtnmA17fOI 35 35 1847 1059 1920x1080 30
 13 https://www.youtube.com/watch?v=0RxAtl6iap8 0 0 1280 720 1280x720 30
 14 https://www.youtube.com/watch?v=6aaFWWhhd-s 31 30 1835 1050 1920x1080 30
 15 https://www.youtube.com/watch?v=hat2Onb6hQw 144 91 1872 1061 1920x1080 30
