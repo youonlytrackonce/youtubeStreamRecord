@@ -6,15 +6,17 @@ import sys
 from datetime import datetime
 import shutil
 
-outDir = '/home/fatih/workspace/youtubeStreamRecord/cams/'
+outDir = '/home/fatih/mnt/datasets/MyDataset/AllSeasons/cams_v4/'
 
-camTxt = open('/home/fatih/workspace/youtubeStreamRecord/youtubeStrCam_v3.txt', 'r')
+camTxt = open('/home/fatih/workspace/youtubeStreamRecord/youtubeStrCam_v4.txt', 'r')
 
 lines = camTxt.readlines()
 frmNum = 1800
+tAll = time.time()
 for count, line in enumerate(lines):
     commState = line.split(' ')[0]
     if commState != '#':
+        t1 = time.time()
         camID = line.split(' ')[0]
         camURL = line.split(' ')[1]
         x1, y1, x2, y2 = line.split(' ')[2:6]  # crop coordinates
@@ -53,7 +55,7 @@ for count, line in enumerate(lines):
         capture.release()
         out.release()
         if timeoutFlag == 1:
-            print('cam{} timeout!!! {}'.format(camID, capTime))
+            print('cam{} timeout!!! {} elapsed time: {}'.format(camID, capTime, time.time()-t1))
             os.remove(orgPath1 + 'outpy.avi')
             continue
         else:
@@ -62,4 +64,5 @@ for count, line in enumerate(lines):
             cmd_str = "ffmpeg -i {} -vf \"crop={}:{}:{}:{},scale={}:{}\" -c:v libx264 -preset slow -crf 18 {}".format(inputVid, int(x2)-int(x1), int(y2)-int(y1), int(x1), int(y1), frame_width, frame_height, outputVid)
             os.system(cmd_str)
             os.remove(inputVid)
-            print('cam{} OK! {}'.format(camID, capTime))
+            print('cam{} OK! {} elapsed time: {}'.format(camID, capTime, time.time()-t1))
+print('Total elapsed time: {}'.format(time.time()-tAll))
