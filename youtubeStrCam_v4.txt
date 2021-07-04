@@ -1,0 +1,12 @@
+# id url x1 y1 x2 y2 resolution fps
+1 https://www.youtube.com/watch?v=5hHelJALhEo 178 44 1890 1014 1920x1080 30
+# 2 https://www.youtube.com/watch?v=QF-wy7ytETs 20 54 1064 638 1280x720 30
+3 https://www.youtube.com/watch?v=ykVb8ZwtkI8 3 103 1085 713 1280x720 30
+# 4 https://www.youtube.com/watch?v=wCcMcaiRbhM 28 60 1820 1072 1920x1080 30
+5 https://www.youtube.com/watch?v=gmePhJi_QbY 96 33 1919 1061 1920x1080 30
+# 6 https://www.youtube.com/watch?v=Rc2uhcrLqMI 0 0 1920 1080 1920x1080 30
+# 7 https://www.youtube.com/watch?v=quCZLnE3zjg 0 0 1920 1080 1920x1080 30
+8 https://www.youtube.com/watch?v=5yVw6mkzIow 281 102 1841 982 1920x1080 30
+9 https://www.youtube.com/watch?v=G05wmWFDtSo 164 110 1784 1026 1920x1080 30
+10 https://www.youtube.com/watch?v=JMcRyXHgmfw 0 0 1920 1080 1920x1080 30
+11 https://www.youtube.com/watch?v=Dsf2OfaqRL8 56 89 1790 1065 1920x1080 30
